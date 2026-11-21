@@ -1,0 +1,19 @@
+{% extends 'predictor/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body text-center p-5">
+        <h1 class="card-title">House Price Prediction System</h1>
+        <p class="card-text mt-3">
+            Enter basic details of a house, such as location, area, bedrooms,
+            bathrooms, age and furnishing, and get an estimated price.
+        </p>
+        <p class="text-muted">
+            Note: This is a sample rule-based estimate, not an actual market valuation.
+        </p>
+        <a href="{% url 'predict' %}" class="btn btn-primary btn-lg mt-2">Start Prediction</a>
+    </div>
+</div>
+{% endblock %}

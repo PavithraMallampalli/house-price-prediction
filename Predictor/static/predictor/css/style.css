@@ -1,0 +1,48 @@
+/* style.css - simple styling for House Price Prediction System */
+
+/* Two main colors: dark blue and light grey */
+:root {
+    --main-blue: #1f4e79;
+    --light-grey: #f4f7fa;
+}
+
+body {
+    background-color: var(--light-grey);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333333;
+}
+
+/* Navigation bar */
+.site-navbar {
+    background-color: var(--main-blue);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--main-blue);
+    border-color: var(--main-blue);
+}
+
+.btn-primary:hover {
+    background-color: #163a5c;
+    border-color: #163a5c;
+}
+
+/* Price text on the result page */
+.text-primary {
+    color: var(--main-blue) !important;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    color: #6c757d;
+    font-size: 14px;
+    padding: 20px 0;
+}

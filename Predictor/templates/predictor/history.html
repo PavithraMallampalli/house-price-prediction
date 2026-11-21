@@ -1,0 +1,44 @@
+{% extends 'predictor/base.html' %}
+
+{% block title %}History{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body p-4">
+        <h2 class="mb-3">Prediction History</h2>
+
+        {% if predictions %}
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>Location</th>
+                        <th>Area (sq ft)</th>
+                        <th>BHK</th>
+                        <th>Estimated Price</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in predictions %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ p.location }}</td>
+                        <td>{{ p.area }}</td>
+                        <td>{{ p.bhk }}</td>
+                        <td>₹ {{ p.formatted_price }}</td>
+                        <td>{{ p.created_at|date:"d M Y, h:i A" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-muted">No predictions yet. Go to the Predict page to create one.</p>
+        {% endif %}
+
+        <a href="{% url 'predict' %}" class="btn btn-primary mt-2">New Prediction</a>
+    </div>
+</div>
+{% endblock %}
